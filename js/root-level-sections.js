@@ -2,6 +2,7 @@
 // index pages, which allows the styling of the navigation menu to be
 // more easily changed
 document.addEventListener('DOMContentLoaded', function () {
+  console.log('hellllo');
   // Get the current pathname
   const path = window.location.pathname;
 
