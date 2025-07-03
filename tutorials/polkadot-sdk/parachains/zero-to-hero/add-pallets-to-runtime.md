@@ -20,17 +20,15 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
 1. Open the `runtime/Cargo.toml` file and locate the `[dependencies]` section. Add the pallets with the following lines:
 
-    ```toml hl_lines="3-4" title="Cargo.toml"
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:19:19'
-    ...
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:60:61'
+    ```js
+    // something
     ```
 
 2. In the `[features]` section, add the pallets to the `std` feature list:
 
     ```toml hl_lines="5-6" title="Cargo.toml"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:63:65'
-        ...
+    ...
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:74:76'
     ```
 
@@ -44,27 +42,27 @@ Configure the pallets by implementing their `Config` trait and update the runtim
 
     ```rust title="mod.rs" hl_lines="2"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:59:60'
-    ...
     ```
 
 2. Implement the [`Config`](https://paritytech.github.io/polkadot-sdk/master/pallet_utility/pallet/trait.Config.html){target=\_blank} trait for both pallets at the end of the `runtime/src/config/mod.rs` file:
 
     ```rust title="mod.rs" hl_lines="7-25"
-    ...
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:315'
+    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:315:336'
+    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:338:338'
     ```
 
 3. Locate the `#[frame_support::runtime]` macro in the `runtime/src/lib.rs` file and add the pallets:
 
-    ```rust hl_lines="5-9" title="lib.rs"
+    ```rust hl_lines="8-12" title="lib.rs"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:253:255'
-        ...
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:314:319'
+        --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:265:266'
+
+    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:313:318'
     ```
 
 ## Recompile the Runtime
 
-After adding and configuring your pallets in the runtime, the next step is to ensure everything is set up correctly. To do this, recompile the runtime using the following command:
+After adding and configuring your pallets in the runtime, the next step is to ensure everything is set up correctly. To do this, recompile the runtime with the following command (make sure you're in the project's root directory):
 
 ```bash
 cargo build --release
