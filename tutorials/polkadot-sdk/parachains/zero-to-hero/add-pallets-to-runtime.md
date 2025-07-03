@@ -20,9 +20,8 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
 1. Open the `runtime/Cargo.toml` file and locate the `[dependencies]` section. Add the pallets with the following lines:
 
-    ```toml hl_lines="3-4" title="Cargo.toml"
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:19:19'
-    --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:60:61'
+    ```toml hl_lines="3-4" 
+    # something
     ```
 
 2. In the `[features]` section, add the pallets to the `std` feature list:
