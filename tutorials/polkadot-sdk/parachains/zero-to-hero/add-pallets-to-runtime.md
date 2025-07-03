@@ -20,8 +20,8 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
 1. Open the `runtime/Cargo.toml` file and locate the `[dependencies]` section. Add the pallets with the following lines:
 
-    ```toml
-    # something
+    ```js
+    // something
     ```
 
 2. In the `[features]` section, add the pallets to the `std` feature list:
