@@ -22,7 +22,6 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
     ```toml hl_lines="3-4" title="Cargo.toml"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:19:19'
-    ...
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:60:61'
     ```
 
@@ -30,7 +29,6 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
     ```toml hl_lines="5-6" title="Cargo.toml"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:63:65'
-        ...
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/Cargo.toml:74:76'
     ```
 
@@ -44,13 +42,11 @@ Configure the pallets by implementing their `Config` trait and update the runtim
 
     ```rust title="mod.rs" hl_lines="2"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:59:60'
-    ...
     ```
 
 2. Implement the [`Config`](https://paritytech.github.io/polkadot-sdk/master/pallet_utility/pallet/trait.Config.html){target=\_blank} trait for both pallets at the end of the `runtime/src/config/mod.rs` file:
 
     ```rust title="mod.rs" hl_lines="7-25"
-    ...
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:315:336'
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/configs/mod.rs:338:338'
     ```
@@ -59,7 +55,6 @@ Configure the pallets by implementing their `Config` trait and update the runtim
 
     ```rust hl_lines="8-12" title="lib.rs"
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:253:255'
-            ...
         --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:265:266'
 
     --8<-- 'code/tutorials/polkadot-sdk/parachains/zero-to-hero/runtime/src/lib.rs:313:318'
