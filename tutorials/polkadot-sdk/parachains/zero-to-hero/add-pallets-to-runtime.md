@@ -20,7 +20,7 @@ Update the runtime's `Cargo.toml` file to include the utility pallet and your cu
 
 1. Open the `runtime/Cargo.toml` file and locate the `[dependencies]` section. Add the pallets with the following lines:
 
-    ```toml hl_lines="3-4" 
+    ```toml
     # something
     ```
 
