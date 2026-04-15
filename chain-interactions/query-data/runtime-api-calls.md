@@ -1,26 +1,20 @@
 ---
 title: Runtime API Calls
-description: Learn how to call Polkadot runtime APIs to access the Wasm runtime and retrieve computed results using PAPI, Polkadot.js, Dedot, Python, and Subxt.
+description: "Execute Polkadot SDK runtime APIs — including AccountNonceApi, Metadata, TransactionPaymentApi, and StakingApi — against Polkadot Hub TestNet using PAPI (`polkadot-api`), Polkadot.js API (`@polkadot/api`, maintenance mode), Dedot, Python Substrate Interface, or Subxt (Rust). Unlike storage queries, runtime APIs invoke Wasm runtime logic to return computed results. Requires Node.js 18+, Python 3.8+, or Rust stable toolchain depending on chosen SDK."
 categories: Polkadot Protocol, Tooling
+category: Chain Interactions
+url: /chain-interactions/query-data/runtime-api-calls/
+related:
+  - /chain-interactions/query-data/query-sdks/
+  - /chain-interactions/query-data/query-rest/
+  - /chain-interactions/send-transactions/with-sdks/
 ---
 
+Covers: Polkadot runtime APIs, PAPI, Polkadot.js API, Dedot, Python Substrate Interface, Subxt, AccountNonceApi, Metadata API, WebAssembly runtime execution
+Requires: Node.js 18+ with npm/pnpm/yarn (PAPI, Polkadot.js, Dedot), Python 3.8+ with pip (PSI), or Rust stable with Cargo (Subxt); WebSocket endpoint for Polkadot Hub TestNet
+Returns: Account transaction nonce, supported metadata versions
+
 # Runtime API Calls
-
-<div class="status-badge" markdown>
-[![Runtime API Calls](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-runtime-api-calls.yml/badge.svg?event=push)](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-runtime-api-calls.yml){target=\_blank}
-</div>
-
-## Introduction
-
-Polkadot SDK runtime APIs provide direct access to the blockchain's WebAssembly (Wasm) runtime, enabling specialized queries and computations that go beyond simple storage reads. Unlike storage queries that fetch static data, runtime APIs execute logic within the runtime to compute results dynamically.
-
-Common runtime APIs include:
-
-- **AccountNonceApi**: Retrieves the current transaction nonce for an account.
-- **Metadata**: Queries available metadata versions and runtime information.
-- **TransactionPaymentApi**: Estimates transaction fees before submission.
-- **NominationPoolsApi**: Retrieves staking pool information and pending rewards.
-- **StakingApi**: Accesses staking-related computations.
 
 ## Call Runtime APIs
 
@@ -317,40 +311,3 @@ The following runtime APIs are commonly available on Polkadot SDK-based chains:
 
 !!! note
     Available runtime APIs vary by chain. Check your target chain's metadata to see which APIs are exposed.
-
-<div class="status-badge" markdown>
-[![Runtime API Calls](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-runtime-api-calls.yml/badge.svg?event=push)](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-runtime-api-calls.yml){target=\_blank}
-[:material-code-tags: View tests](https://github.com/polkadot-developers/polkadot-cookbook/blob/master/polkadot-docs/chain-interactions/runtime-api-calls/tests/docs.test.ts){ .tests-button target=\_blank}
-</div>
-
-## Where to Go Next
-
-Now that you understand how to call runtime APIs to execute logic within the runtime, explore these related topics:
-
-<div class="grid cards" markdown>
-
--   __Query with SDKs__
-
-    ---
-
-    Use TypeScript, Python, or Rust SDKs for programmatic access.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/query-data/query-sdks/)
-
--   __Query On-Chain State with Sidecar REST API__
-
-    ---
-
-    Learn how to query on-chain state using the Sidecar REST API
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/query-data/query-rest/)
-
--   __Send Transactions__
-
-    ---
-
-    Learn to construct and submit transactions.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/send-transactions/with-sdks/)        
-
-</div>

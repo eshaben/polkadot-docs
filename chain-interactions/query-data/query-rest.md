@@ -1,24 +1,24 @@
 ---
 title: Query On-Chain State with Sidecar REST API
-description: Learn how to query on-chain state on Polkadot using the Sidecar REST API with curl, including account balances, asset data, and block information.
+description: "Substrate API Sidecar exposes a REST HTTP interface for querying Polkadot SDK chain state without WebSocket connections or SDK setup. Covers querying native account balances, Assets pallet balances, asset metadata and details, foreign asset balances, and block data using `curl`. Public endpoints available for Polkadot, Kusama, Polkadot Hub, and Kusama Hub; can also be self-hosted via npm or Docker."
 categories: Chain Interactions, Tooling
+category: Chain Interactions
+url: /chain-interactions/query-data/query-rest/
+related:
+  - /chain-interactions/query-data/query-sdks/
+  - /chain-interactions/query-data/runtime-api-calls/
+  - /chain-interactions/send-transactions/with-sdks/
 ---
+
+Covers: Substrate API Sidecar REST API, curl, account balance queries, asset balance queries, asset metadata, asset details, foreign asset balances, block data
+Requires: curl or any HTTP client, Sidecar instance (public or self-hosted via npm or Docker)
+Returns: JSON with balance fields (free, reserved, frozen, transferable), asset data, and block information at queried block height
 
 # Query On-Chain State with Sidecar REST API
 
-<div class="status-badge" markdown>
-[![Query On-Chain State with Sidecar REST API](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-query-rest.yml/badge.svg?event=push)](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-query-rest.yml){target=\_blank}
-</div>
-
-## Introduction
-
-[Substrate API Sidecar](https://github.com/paritytech/substrate-api-sidecar){target=\_blank} is a REST service that makes it easy to interact with Polkadot SDK-based blockchains. It provides a simple HTTP interface to query account balances, asset information, block data, and other on-chain state without requiring WebSocket connections or SDK integrations.
-
-This guide demonstrates how to query on-chain storage using the Sidecar REST API with `curl` commands. You'll learn to retrieve account balances, asset metadata, and block information from Polkadot Hub.
-
 ## Prerequisites
 
-- [curl](https://curl.se/){target=\_blank} or any HTTP client
+- curl or any HTTP client
 - Access to a Sidecar instance (public or self-hosted)
 
 ## Running Sidecar Locally
@@ -265,40 +265,3 @@ curl -s "https://polkadot-asset-hub-public-sidecar.parity-chains.parity.io/block
 ## API Reference
 
 For a complete list of endpoints and parameters, see the [Sidecar API Documentation](https://paritytech.github.io/substrate-api-sidecar/docsv2/){target=\_blank}.
-
-<div class="status-badge" markdown>
-[![Query On-Chain State with Sidecar REST API](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-query-rest.yml/badge.svg?event=push)](https://github.com/polkadot-developers/polkadot-cookbook/actions/workflows/polkadot-docs-query-rest.yml){target=\_blank}
-[:material-code-tags: View tests](https://github.com/polkadot-developers/polkadot-cookbook/blob/master/polkadot-docs/chain-interactions/query-rest/tests/docs.test.ts){ .tests-button target=\_blank}
-</div>
-
-## Where to Go Next
-
-Now that you understand how to query on-chain state with the REST API, explore these related topics:
-
-<div class="grid cards" markdown>
-
--   __Query with SDKs__
-
-    ---
-
-    Use TypeScript, Python, or Rust SDKs for programmatic access.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/query-data/query-sdks/)
-
--   __Runtime API Calls__
-
-    ---
-
-    Learn how to execute Polkadot runtime APIs for specialized queries.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/query-data/runtime-api-calls/)
-
--   __Send Transactions__
-
-    ---
-
-    Learn to construct and submit transactions.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/send-transactions/with-sdks)        
-
-</div>

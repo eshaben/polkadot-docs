@@ -1,28 +1,24 @@
 ---
 title: Query On-Chain State with SDKs
-description: Learn how to query on-chain storage data on Polkadot Hub using PAPI, Polkadot.js, Dedot, Python Substrate Interface, and Subxt.
+description: "Query on-chain storage (System.Account balances, Assets pallet metadata) on Polkadot Hub using PAPI (`polkadot-api`), Polkadot.js API (`@polkadot/api`, maintenance mode — prefer PAPI or Dedot for new projects), Dedot, Python Substrate Interface (`substrate-interface`), or Subxt (Rust). Covers both account balance and asset information queries with runnable code examples. Requires Node.js 18+, Python 3.8+, or Rust stable toolchain depending on SDK."
 categories: Chain Interactions, Tooling
+category: Chain Interactions
+url: /chain-interactions/query-data/query-sdks/
+related:
+  - /chain-interactions/query-data/runtime-api-calls/
+  - /chain-interactions/query-data/query-rest/
+  - /chain-interactions/send-transactions/with-sdks/
 page_badges:
   test_workflow: polkadot-docs-query-sdks
 page_tests:
   path: polkadot-docs/chain-interactions/query-sdks/tests/docs.test.ts
 ---
 
+Covers: PAPI (polkadot-api), Polkadot.js API (@polkadot/api), Dedot, Python Substrate Interface (substrate-interface), Subxt, System.Account storage queries, Assets pallet metadata queries
+Requires: Node.js 18+ with npm/pnpm/yarn (PAPI, Polkadot.js, Dedot), Python 3.8+ with pip (PSI), or Rust stable with Cargo (Subxt); WebSocket endpoint for Polkadot Hub
+Returns: Native token balance (free, reserved, frozen) and asset metadata including name, symbol, decimals, and account asset balance
+
 # Query On-Chain State with SDKs
-
-## Introduction
-
-Polkadot SDK-based blockchains store data in a key-value database that external applications can query. This on-chain state includes account balances, asset information, governance proposals, and any other data the runtime manages.
-
-This guide demonstrates how to query on-chain storage using five popular SDKs:
-
-- **[Polkadot API (PAPI)](/reference/tools/papi/){target=\_blank}**: Modern TypeScript library with type-safe APIs
-- **[Polkadot.js API](/reference/tools/polkadot-js-api/){target=\_blank}**: Comprehensive JavaScript library (maintenance mode)
-- **[Dedot](/reference/tools/dedot/){target=\_blank}**: Lightweight TypeScript library optimized for performance
-- **[Python Substrate Interface](/reference/tools/py-substrate-interface/){target=\_blank}**: Python library for Substrate chains
-- **[Subxt](/reference/tools/subxt/){target=\_blank}**: Rust library with compile-time type safety
-
-Select your preferred SDK below to see complete, runnable examples that query Polkadot Hub for account balances and asset information.
 
 ## Query On-Chain Data
 
@@ -396,24 +392,3 @@ Select your preferred SDK below to see complete, runnable examples that query Po
 
     --8<-- 'code/chain-interactions/query-data/query-sdks/subxt/query-asset-rs.html'
 
-## Where to Go Next
-
-<div class="grid cards" markdown>
-
-- <span class="badge guide">Guide</span> **Runtime API Calls**
-
-    ---
-
-    Execute runtime APIs for specialized queries.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/query-data/runtime-api-calls/)
-
-- <span class="badge guide">Guide</span> **Send Transactions**
-
-    ---
-
-    Learn how to construct and submit transactions.
-
-    [:octicons-arrow-right-24: Get Started](/chain-interactions/send-transactions/with-sdks/)
-
-</div>
